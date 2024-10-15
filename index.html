@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homescope - Affordable Housing Finder</title>
+    <title>Homescope</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,28 +20,31 @@
 
     <section id="listings">
         <h2>Available Listings</h2>
-        <div id="listings-container">
-            <!-- Two listings initially -->
-            <div class="listing" data-id="1">
-                <h3>2BHK Apartment in Ganj</h3>
-                <p>Price: ₹12,000/month</p>
-                <p>Location: Ganj</p>
-                <button class="view-details">View Details</button>
-            </div>
-            <div class="listing" data-id="2">
-                <h3>3BHK Apartment in Ganj</h3>
-                <p>Price: ₹18,000/month</p>
-                <p>Location: Ganj</p>
-                <button class="view-details">View Details</button>
-            </div>
+        <div class="listing">
+            <h3>2BHK Apartment in Ganj</h3>
+            <p>Price: ₹12,000/month</p>
+            <p>Size: 900 sq.ft.</p>
+            <p>Floor: Ground</p>
+            <p>Furnished: Yes</p>
+            <p>Tenant Preference: Family</p>
+            <button class="view-details" data-id="1">View Details</button>
         </div>
-        <button id="show-more">Show More</button>
+        <div class="listing">
+            <h3>3BHK Apartment in Crescent</h3>
+            <p>Price: ₹18,000/month</p>
+            <p>Size: 1,500 sq.ft.</p>
+            <p>Floor: 1 of 2</p>
+            <p>Furnished: No</p>
+            <p>Tenant Preference: Both</p>
+            <button class="view-details" data-id="2">View Details</button>
+        </div>
+        <button id="load-more">Load More</button>
     </section>
 
     <section id="details-section" style="display: none;">
-        <h2>Listing Details</h2>
-        <div id="details-container"></div>
-        <button id="back-to-listings">Back to Listings</button>
+        <h2>Property Details</h2>
+        <div id="property-details"></div>
+        <button id="go-back">Back to Listings</button>
     </section>
 
     <section id="map">
@@ -53,7 +56,7 @@
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <form id="contact-form">
+        <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             
