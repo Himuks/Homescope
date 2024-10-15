@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const listings = [
         {id: 1, title: "2BHK Apartment in Ganj", rent: "₹12,000", location: "Ganj", size: "900 sq. ft.", furnished: "Yes", tenant: "Family"},
-        {id: 2, title: "3BHK Apartment in Ganj", rent: "₹18,000", location: "Ganj", size: "1500 sq. ft.", furnished: "No", tenant: "Both"},
-        {id: 3, title: "1BHK Studio in Ganj", rent: "₹8,000", location: "Ganj", size: "600 sq. ft.", furnished: "Yes", tenant: "Bachelor"},
+        {id: 2, title: "3BHK Apartment in Crescent", rent: "₹18,000", location: "Ganj", size: "1500 sq. ft.", furnished: "No", tenant: "Both"},
+        {id: 3, title: "1BHK Studio in Mandi Road", rent: "₹8,000", location: "Ganj", size: "600 sq. ft.", furnished: "Yes", tenant: "Bachelor"},
         {id: 4, title: "2BHK Apartment in Nehru Colony", rent: "₹10,000", location: "Nehru Colony", size: "1000 sq. ft.", furnished: "No", tenant: "Both"},
         // Add more listings here...
     ];
