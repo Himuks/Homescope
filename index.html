@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homescope - Affordable Housing Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Homescope: Affordable Housing in Your Area</h1>
+        <nav>
+            <ul>
+                <li><a href="#listings">Listings</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="listings">
+        <h2>Available Listings</h2>
+        <div id="listings-container">
+            <!-- Two listings initially -->
+            <div class="listing" data-id="1">
+                <h3>2BHK Apartment in Ganj</h3>
+                <p>Price: ₹12,000/month</p>
+                <p>Location: Ganj</p>
+                <button class="view-details">View Details</button>
+            </div>
+            <div class="listing" data-id="2">
+                <h3>3BHK Apartment in Ganj</h3>
+                <p>Price: ₹18,000/month</p>
+                <p>Location: Ganj</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+        <button id="show-more">Show More</button>
+    </section>
+
+    <section id="details-section" style="display: none;">
+        <h2>Listing Details</h2>
+        <div id="details-container"></div>
+        <button id="back-to-listings">Back to Listings</button>
+    </section>
+
+    <section id="map">
+        <h2>Find Housing on the Map</h2>
+        <div id="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7768217.835784534!2d72.69723764858212!3d18.06807706188106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397ce9ceaaaaaaab%3A0xa224b6b82b421f83!2sVIT%20Bhopal%20University!5e0!3m2!1sen!2sin!4v1728978030700!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Homescope. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
