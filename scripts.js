@@ -1,66 +1,57 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const listings = [
-        {id: 1, title: "2BHK Apartment in Ganj", rent: "₹12,000", location: "Ganj", size: "900 sq. ft.", furnished: "Yes", tenant: "Family"},
-        {id: 2, title: "3BHK Apartment in Ganj", rent: "₹18,000", location: "Ganj", size: "1500 sq. ft.", furnished: "No", tenant: "Both"},
-        {id: 3, title: "1BHK Studio in Ganj", rent: "₹8,000", location: "Ganj", size: "600 sq. ft.", furnished: "Yes", tenant: "Bachelor"},
-        {id: 4, title: "2BHK Apartment in Nehru Colony", rent: "₹10,000", location: "Nehru Colony", size: "1000 sq. ft.", furnished: "No", tenant: "Both"},
-        // Add more listings here...
+    const detailsSection = document.getElementById('details-section');
+    const propertyDetails = document.getElementById('property-details');
+    const listingsSection = document.getElementById('listings');
+    const loadMoreButton = document.getElementById('load-more');
+
+    // Property data
+    const properties = [
+        {id: 1, bhk: 2, rent: '₹12,000', size: '900 sq.ft.', floor: 'Ground', location: 'Ganj', furnished: 'Yes', tenant: 'Family'},
+        {id: 2, bhk: 3, rent: '₹18,000', size: '1,500 sq.ft.', floor: '1 of 2', location: 'Crescent', furnished: 'No', tenant: 'Both'},
+        {id: 3, bhk: 1, rent: '₹7,000', size: '500 sq.ft.', floor: 'Ground', location: 'Nehru Colony', furnished: 'No', tenant: 'Bachelor'},
+        {id: 4, bhk: 2, rent: '₹9,000', size: '950 sq.ft.', floor: '1 of 2', location: 'Station', furnished: 'No', tenant: 'Family'},
+        {id: 5, bhk: 1, rent: '₹8,500', size: '750 sq.ft.', floor: 'Ground', location: 'Mandi Road', furnished: 'Yes', tenant: 'Both'}
     ];
 
-    const listingsContainer = document.getElementById('listings-container');
-    const showMoreButton = document.getElementById('show-more');
-    const detailsSection = document.getElementById('details-section');
-    const detailsContainer = document.getElementById('details-container');
-    const backToListingsButton = document.getElementById('back-to-listings');
-    const contactForm = document.getElementById('contact-form');
+    const viewButtons = document.querySelectorAll('.view-details');
 
-    // Show more listings on click
-    showMoreButton.addEventListener('click', () => {
-        listings.slice(2).forEach(listing => {
-            const listingDiv = document.createElement('div');
-            listingDiv.className = 'listing';
-            listingDiv.setAttribute('data-id', listing.id);
-            listingDiv.innerHTML = `
-                <h3>${listing.title}</h3>
-                <p>Price: ${listing.rent}/month</p>
-                <p>Location: ${listing.location}</p>
-                <button class="view-details">View Details</button>
+    viewButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const id = button.getAttribute('data-id');
+            const property = properties.find(p => p.id == id);
+
+            propertyDetails.innerHTML = `
+                <h3>${property.bhk}BHK Apartment in ${property.location}</h3>
+                <p>Rent: ${property.rent}</p>
+                <p>Size: ${property.size}</p>
+                <p>Floor: ${property.floor}</p>
+                <p>Furnished: ${property.furnished}</p>
+                <p>Tenant Preference: ${property.tenant}</p>
             `;
-            listingsContainer.appendChild(listingDiv);
-        });
-        showMoreButton.style.display = 'none';
-    });
-
-    // Handle view details button
-    document.body.addEventListener('click', function(event) {
-        if (event.target.classList.contains('view-details')) {
-            const listingId = event.target.closest('.listing').dataset.id;
-            const listing = listings.find(l => l.id == listingId);
-            
-            // Hide listings section and show details section
-            document.getElementById('listings').style.display = 'none';
+            listingsSection.style.display = 'none';
             detailsSection.style.display = 'block';
-            
-            // Populate details section
-            detailsContainer.innerHTML = `
-                <h3>${listing.title}</h3>
-                <p><strong>Rent:</strong> ${listing.rent}/month</p>
-                <p><strong>Size:</strong> ${listing.size}</p>
-                <p><strong>Furnished:</strong> ${listing.furnished}</p>
-                <p><strong>Tenant Preference:</strong> ${listing.tenant}</p>
-                <p><strong>Location:</strong> ${listing.location}</p>
-            `;
-        }
+        });
     });
 
-    // Back to listings
-    backToListingsButton.addEventListener('click', () => {
+    document.getElementById('go-back').addEventListener('click', () => {
         detailsSection.style.display = 'none';
-        document.getElementById('listings').style.display = 'block';
+        listingsSection.style.display = 'block';
     });
 
-    // Prevent contact form submission from doing anything
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Do nothing
+    loadMoreButton.addEventListener('click', () => {
+        const moreListings = properties.slice(2).map(property => `
+            <div class="listing">
+                <h3>${property.bhk}BHK Apartment in ${property.location}</h3>
+                <p>Price: ${property.rent}/month</p>
+                <p>Size: ${property.size}</p>
+                <p>Floor: ${property.floor}</p>
+                <p>Furnished: ${property.furnished}</p>
+                <p>Tenant Preference: ${property.tenant}</p>
+                <button class="view-details" data-id="${property.id}">View Details</button>
+            </div>
+        `).join('');
+
+        listingsSection.innerHTML += moreListings;
+        loadMoreButton.style.display = 'none';
     });
 });
