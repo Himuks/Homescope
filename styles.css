@@ -112,3 +112,58 @@ footer {
     background-color: #333; /* Dark button */
     border-radius: 5px; /* Rounded button edges */
 }
+
+/* Pagination styles */
+#pagination-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page-button {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.page-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.page-button.active {
+    background-color: #333; /* Dark color for active page */
+}
+
+/* Filter and Sort Container */
+#filter-sort-container {
+    margin-bottom: 20px;
+    width: 400px; /* Adjust the width as desired */
+}
+
+#sort-container {
+    margin-bottom: 20px; /* Add spacing below sort */
+}
+
+#filter-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.filter-group {
+    margin-bottom: 10px;
+    
+}
+
+.filter-group h4 {
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.filter-checkbox {
+    margin-right: 5px;
+}
