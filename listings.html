@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homescope - Listings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Homescope: Affordable Housing in Your Area</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listings.html">Listings</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="listings">
+        <h2>Available Listings</h2>
+        <div id="filter-sort-container">
+            <div id="sort-container">
+                <label for="sort-select">Sort by:</label>
+                <select id="sort-select">
+                    <option value="rent-asc">Rent (Low to High)</option>
+                    <option value="rent-desc">Rent (High to Low)</option>
+                    <option value="size-asc">Size (Low to High)</option>
+                    <option value="size-desc">Size (High to Low)</option>
+                    <option value="location-asc">Location (A-Z)</option>
+                    <option value="location-desc">Location (Z-A)</option>
+                </select>
+            </div>
+            <div id="filter-container">
+                <h3>Filters</h3>
+                <div class="filter-group">
+                    <h4>Location</h4>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="location" value="Ganj"> Ganj</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="location" value="Nehru Colony"> Nehru Colony</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="location" value="Railway Station"> Railway Station</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="location" value="Mandi Road"> Mandi Road</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="location" value="Chanakyapuri"> Chanakyapuri</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="location" value="Cresent"> Cresent</label>
+                    <!-- Add more locations as needed -->
+                </div>
+                <div class="filter-group">
+                    <h4>BHK</h4>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="bhk" value="1"> 1 BHK</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="bhk" value="2"> 2 BHK</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="bhk" value="3"> 3 BHK</label>
+                    <!-- Add more BHK options as needed -->
+                </div>
+                <div class="filter-group">
+                    <h4>Furnished</h4>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="furnished" value="Yes"> Yes</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="furnished" value="No"> No</label>
+                </div>
+                <div class="filter-group">
+                    <h4>Tenant Preference</h4>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="tenant" value="Family"> Family</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="tenant" value="Bachelor"> Bachelor</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter-type="tenant" value="Both"> Both</label>
+                </div>
+                <!-- Add more filter groups as needed -->
+            </div>
+        </div>
+        <div id="listings-container">
+            </div>
+            <div id="pagination-container">
+            </div>
+    </section>
+
+    <section id="details-section" style="display: none;">
+        <h2>Listing Details</h2>
+        <div id="details-container"></div>
+        <button id="back-to-listings">Back to Listings</button>
+    </section>
+
+    <footer>
+        <p>© 2024 Homescope. All rights reserved.</p>
+    </footer>
+
+    <script src="listings.js"></script>
+</body>
+</html>
